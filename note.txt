@@ -1,0 +1,87 @@
+server creation 
+======================
+
+1- npm init
+2- install express npm i express
+
+
+
+steps
+-------
+1-import express
+2-create app using express
+3-seting a port to run the app (3000)
+
+
+
+
+JWt (json web token)
+-----------------------
+
+-user authendication
+-json web token -library used to genarate tokens 
+-sign() - methos to granarate token 
+-verify()-method used to token verification
+
+token verification
+===================
+
+middilwares
+-------------
+-its a function  with 3 arguments (req,res,next)
+have  the capacity to conatrol http in the node
+-two types of meddileware
+
+  -1- application specific middilwares  - it happen before all  the htpp methods
+
+  -2-router specific middilewares - can apply only to the specific request
+
+  -next()-method used inide middileware to continue nod execution
+
+  MONGODB
+  ========
+
+  1-to see the database-------show dbs 
+  2-tomopen db --------------- use database name
+  3-to list collections---------show collections
+  4- to show the datas inside the collections-----db.collection name.find()
+  5-to show a single data insidea collection -------db.collectionname.findone(key:value)
+       example ------ db.users.findone({acno:1000})   -preaent  ------full data of that objectt
+                                                       -nor preaent---null
+
+  6- insert new data ------------db.collectionname.insertone({key:value})
+  7-to find data using a particular condition -----db.collectionname.find({condition})  
+                                                                                     condition create using query selctor operators
+
+
+                                                                                      -to acess datas which have 40000 greater balance 
+
+                                                                                      db.users.find({balance:{gt:40000}})
+  8-delete a data fromm collection-----------db.collectionname.deleteone({key:value})  delelte count=0 -------  to find  how many daras are deleted 
+
+  9-update  ---------- db.collectionname.updateone({oldkey:oldvalue},{$set:{newkey:newvalue}})       
+  db.users.updateone({username:anu},{$set:{username:anu v}})                                                                           
+
+
+
+
+
+
+
+
+
+db server intergration (mbd to node connection)
+                        27017 to 3000
+   mongoose-library used to interfrate mongodb and server
+             -npm i mongoose 
+
+
+             connect()-method used to create connection string  
+
+             model()-method used to create model    
+
+   step
+   ---------
+   import mongoose
+   2-connection string creation
+   3-model creation for collection (model name is singular form of collection name)          
